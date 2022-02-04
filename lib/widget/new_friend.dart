@@ -38,14 +38,19 @@ class _NewFriendState extends State<NewFriend> {
 
       ),
       body: Center(
-        child: new Form(
-          child: new Column(
+
+        child: Form(
+          child: Column(
             children: [
-              new Padding(padding: EdgeInsets.only(top: 30.0)),
-              new TextFormField(controller: textEditingControllerFriendName,decoration: InputDecoration(hintText : "Name"),),
-              new TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Mobile No."),),
-              new TextFormField(controller: textEditingControllerFriendAddress,decoration: InputDecoration(hintText : "Address"),),
-              RaisedButton(onPressed: (){
+              Padding(padding: EdgeInsets.all(30.0)),
+              TextFormField(controller: textEditingControllerFriendName,decoration: InputDecoration(hintText : "Name"),),
+              TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Mobile No."),),
+              TextFormField(controller: textEditingControllerFriendAddress,decoration: InputDecoration(hintText : "Address"),),
+
+              SizedBox(height: 13.0,),
+              RaisedButton(
+               color: Colors.green
+              ,onPressed: (){
 
                 final friend = new Friend(friendName: "${textEditingControllerFriendName.text}", friendEmail: "${textEditingControllerFriendEmail.text}", friendAddress: "${textEditingControllerFriendAddress.text}");
 
@@ -55,7 +60,7 @@ class _NewFriendState extends State<NewFriend> {
 
 
               },
-              child: Text("SAVE"),
+              child: Text("SAVE",style: TextStyle(color: Colors.white),),
               )
 
             ],

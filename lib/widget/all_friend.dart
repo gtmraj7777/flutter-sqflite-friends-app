@@ -52,9 +52,9 @@ class _AllFriendState extends State<AllFriend> {
 
               },
             leading: Image.asset('assets/images/user.jpg'),
-              title: Text("${friends[index].friendName}"),
-              subtitle: Text("${friends[index].friendEmail}"),
-              trailing: Text("${friends[index].friendAddress}"),
+              title: Text("${friends[index].friendName}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue),),
+              subtitle: Text("${friends[index].friendEmail}",style: TextStyle(fontWeight: FontWeight.w600,color: Colors.deepPurple),),
+              trailing: Text("${friends[index].friendAddress}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.brown),),
               // trailing: RaisedButton(onPressed: () {
               //   Navigator.push(context, MaterialPageRoute(builder: (context) => EditFriend(friends[index])),);
               // },
@@ -87,7 +87,7 @@ class _AllFriendState extends State<AllFriend> {
           onPressed: () async{
             await Navigator.push(context, MaterialPageRoute(builder: (context) => NewFriend()),);
           },
-          tooltip: 'Increment',
+
           child: const Icon(Icons.add),
         ),
         drawer: Drawer(),

@@ -25,8 +25,8 @@ class _FriendDetailsState extends State<FriendDetails> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Details"),
-        actions: [callButton(),editButton(),deleteButton()],
+        appBar: AppBar(title: Text("Contact Details"),
+        actions: [editButton(),deleteButton()],
           leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -44,14 +44,34 @@ class _FriendDetailsState extends State<FriendDetails> {
 
             children: [
               SizedBox( height: 50.0,),
+              Card(child: Image.asset('assets/images/user.jpg'),
+
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+              ),
+              SizedBox( height: 10.0,),
               Text("${widget.friend.friendName}",style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold,color: Colors.teal),),
-
+              SizedBox( height: 10.0,),
               Text("${widget.friend.friendAddress}",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.pink),),
-
+              SizedBox( height: 10.0,),
               Text("${widget.friend.friendEmail}",style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
 
             ],
           ),
+        ),
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async{
+
+            final phoneNumber = "${widget.friend.friendEmail}";
+            final url = 'tel:$phoneNumber';
+
+            if(await canLaunch(url))
+            {
+              await launch(url);
+            }
+          },
+
+          child: const Icon(Icons.phone),
         ),
       ),
     );

@@ -47,7 +47,7 @@ class _EditFriendState extends State<EditFriend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Edit Friend"),
+      appBar: AppBar(title: Text("Edit Contact"),
 
         leading: InkWell(
           onTap: () {
@@ -66,8 +66,9 @@ class _EditFriendState extends State<EditFriend> {
             children: [
               new Padding(padding: EdgeInsets.only(top: 30.0)),
               new TextFormField(controller: textEditingControllerFriendName,decoration: InputDecoration(hintText : "Name"),),
-              new TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Email"),),
+              new TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Mobile No."),),
               new TextFormField(controller: textEditingControllerFriendAddress,decoration: InputDecoration(hintText : "Address"),),
+              SizedBox(height: 15.0,),
               RaisedButton(onPressed: (){
 
                // final friend = new Friend(friendName: "${textEditingControllerFriendName.text}", friendEmail: "${textEditingControllerFriendEmail.text}", friendAddress: "${textEditingControllerFriendAddress.text}");
@@ -88,7 +89,8 @@ class _EditFriendState extends State<EditFriend> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => AllFriend()),);
 
               },
-                child: Text("SAVE CHANGE"),
+                color: Colors.deepOrange,
+                child: Text("SAVE CHANGES",style: TextStyle(color: Colors.white),),
               )
             ],
 
