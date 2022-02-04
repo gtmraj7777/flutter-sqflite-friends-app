@@ -38,8 +38,8 @@ class _AllFriendState extends State<AllFriend> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Friends"),
-         actions: [addButton()],
+        appBar: AppBar(title: Text("Contacts"),
+         actions: [settingButton()],
         ),
         body:(friends != null && friends.isNotEmpty)?ListView.builder(itemCount: friends.length ,itemBuilder: (context,index){
           return Card(
@@ -82,6 +82,15 @@ class _AllFriendState extends State<AllFriend> {
         }) : Center(
           child: CircularProgressIndicator(),
         ),
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async{
+            await Navigator.push(context, MaterialPageRoute(builder: (context) => NewFriend()),);
+          },
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+        drawer: Drawer(),
       ),
     );
   }
@@ -95,10 +104,9 @@ class _AllFriendState extends State<AllFriend> {
   }
 
 
-  Widget addButton() => IconButton(
-      icon: Icon(Icons.add),
+  Widget settingButton() => IconButton(
+      icon: Icon(Icons.settings),
       onPressed: ()  async{
-        await Navigator.push(context, MaterialPageRoute(builder: (context) => NewFriend()),);
 
         //refreshNote();
       });

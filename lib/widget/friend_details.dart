@@ -26,7 +26,7 @@ class _FriendDetailsState extends State<FriendDetails> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: Text("Details"),
-        actions: [editButton(),deleteButton()],
+        actions: [callButton(),editButton(),deleteButton()],
           leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -44,30 +44,11 @@ class _FriendDetailsState extends State<FriendDetails> {
 
             children: [
               SizedBox( height: 50.0,),
-              Text("${widget.friend.friendName}"),
+              Text("${widget.friend.friendName}",style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold,color: Colors.teal),),
 
-              Text("${widget.friend.friendAddress}"),
-              Row(children: [
+              Text("${widget.friend.friendAddress}",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.pink),),
 
-                Text("${widget.friend.friendEmail}"),
-                ElevatedButton(
-                    onPressed: () async{
-
-                      final phoneNumber = "${widget.friend.friendEmail}";
-                      final url = 'tel:$phoneNumber';
-
-                      if(await canLaunch(url))
-                      {
-                        await launch(url);
-                      }
-
-
-
-                    },
-                    child: Text("Call"),
-                ),
-
-              ],),
+              Text("${widget.friend.friendEmail}",style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold,color: Colors.blueAccent),),
 
             ],
           ),
@@ -97,6 +78,32 @@ class _FriendDetailsState extends State<FriendDetails> {
       Navigator.of(context).pop();
     },
   );
+
+
+
+  Widget callButton() => IconButton(
+    icon: Icon(Icons.phone),
+    onPressed: () async {
+
+
+      final phoneNumber = "${widget.friend.friendEmail}";
+      final url = 'tel:$phoneNumber';
+
+      if(await canLaunch(url))
+      {
+        await launch(url);
+      }
+
+     // Navigator.of(context).pop();
+
+
+
+
+    },
+  );
+
+
+
 
   Future delete(int? id) async{
 

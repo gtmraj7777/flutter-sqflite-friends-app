@@ -24,7 +24,7 @@ class _NewFriendState extends State<NewFriend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("New Friend"),
+      appBar: AppBar(title: Text("Create new contact"),
 
         leading: InkWell(
           onTap: () {
@@ -55,7 +55,7 @@ class _NewFriendState extends State<NewFriend> {
 
 
               },
-              child: Text("ADD"),
+              child: Text("SAVE"),
               )
 
             ],
