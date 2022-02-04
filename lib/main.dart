@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'all_friend.dart';
-import 'friend.dart';
-import 'friend_database.dart';
-import 'friend_details.dart';
-import 'new_friend.dart';
+import 'widget/all_friend.dart';
+import 'model/friend.dart';
+import 'dbhelper/friend_database.dart';
+import 'widget/friend_details.dart';
+import 'widget/new_friend.dart';
 
 
 
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       initialRoute: "/",
 
       routes: {
-        "/":(context) => AllFriend()
+        "/":(context) => AllFriend(),
       },
     );
   }
