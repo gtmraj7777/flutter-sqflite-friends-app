@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->D:\flutterproject\flutter_sqflite-master\flutter_sqflite-master\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->D:\flutterproject\flutter_sqflite-master\flutter_sqflite-master\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->D:\flutterproject\flutter_sqflite\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->D:\flutterproject\flutter_sqflite\android\app\src\debug\AndroidManifest.xml:6:22-64
 15
 16    <application
 17        android:name="android.app.Application"
@@ -54,6 +54,15 @@
 51        <meta-data
 52            android:name="flutterEmbedding"
 53            android:value="2" />
-54    </application>
-55
-56</manifest>
+54
+55        <activity
+55-->[:url_launcher_android] D:\flutterproject\flutter_sqflite\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+56            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+56-->[:url_launcher_android] D:\flutterproject\flutter_sqflite\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+57            android:exported="false"
+57-->[:url_launcher_android] D:\flutterproject\flutter_sqflite\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+58            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+58-->[:url_launcher_android] D:\flutterproject\flutter_sqflite\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+59    </application>
+60
+61</manifest>

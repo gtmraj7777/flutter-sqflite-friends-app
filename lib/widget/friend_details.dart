@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sqflite_app_friends/dbhelper/friend_database.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'all_friend.dart';
 import 'edit_friend.dart';
@@ -36,12 +37,40 @@ class _FriendDetailsState extends State<FriendDetails> {
             ),
           ),
         ),
-        body: Column(
-          children: [
-            Text("${widget.friend.friendName}"),
-            Text("${widget.friend.friendEmail}"),
-            Text("${widget.friend.friendAddress}"),
-          ],
+        body: Center(
+
+          child: Column(
+
+
+            children: [
+              SizedBox( height: 50.0,),
+              Text("${widget.friend.friendName}"),
+
+              Text("${widget.friend.friendAddress}"),
+              Row(children: [
+
+                Text("${widget.friend.friendEmail}"),
+                ElevatedButton(
+                    onPressed: () async{
+
+                      final phoneNumber = "${widget.friend.friendEmail}";
+                      final url = 'tel:$phoneNumber';
+
+                      if(await canLaunch(url))
+                      {
+                        await launch(url);
+                      }
+
+
+
+                    },
+                    child: Text("Call"),
+                ),
+
+              ],),
+
+            ],
+          ),
         ),
       ),
     );
@@ -70,7 +99,6 @@ class _FriendDetailsState extends State<FriendDetails> {
   );
 
   Future delete(int? id) async{
-
 
     await FriendDatabase.instance.delete(id!);
 

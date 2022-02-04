@@ -43,7 +43,7 @@ class _NewFriendState extends State<NewFriend> {
             children: [
               new Padding(padding: EdgeInsets.only(top: 30.0)),
               new TextFormField(controller: textEditingControllerFriendName,decoration: InputDecoration(hintText : "Name"),),
-              new TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Email"),),
+              new TextFormField(controller: textEditingControllerFriendEmail,decoration: InputDecoration(hintText: "Mobile No."),),
               new TextFormField(controller: textEditingControllerFriendAddress,decoration: InputDecoration(hintText : "Address"),),
               RaisedButton(onPressed: (){
 

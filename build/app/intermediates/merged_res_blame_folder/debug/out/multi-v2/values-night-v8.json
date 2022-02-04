@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\flutterproject\\flutter_sqflite-master\\flutter_sqflite-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\flutterproject\\flutter_sqflite\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\flutterproject\\flutter_sqflite-master\\flutter_sqflite-master\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\flutterproject\\flutter_sqflite\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
